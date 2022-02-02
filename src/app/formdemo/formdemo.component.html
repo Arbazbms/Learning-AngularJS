@@ -1,0 +1,9 @@
+<p>formdemo works!</p>
+<p> 1. Reactive Form Module: </p> 
+<input type="text" [formControl]="favoriteColorControl">
+{{favoriteColorControl.value}}
+<br />
+<p>2. Template Driven Forms</p>
+<input type="text" [(ngModel)]="color">
+{{color}}
+

@@ -1,0 +1,46 @@
+<p>basic works!</p>
+<p>text: {{title}}</p>
+<p>myObject property:  {{myObject.color}}</p>
+<p>For Loop myArr elements</p>
+<ul>
+    <li *ngFor="let i of myArr">{{i}}</li>
+</ul>
+<p>Checking myArr is Empty or Not!</p>
+<ul>
+    <li *ngIf="myArr; else idtemplate">myArr Not Empty</li>
+</ul>
+<ng-template #idtemplate>myArr is Empty</ng-template>
+
+<h1>Data Binding example(1 way)</h1>
+<p>Interpolation example: </p>
+<p>2 * 2 : {{2*2}}</p>
+<img src= "{{image}}">
+
+<p>property binding example: </p>
+<img [src] = "image">
+
+<p>Event Binding : </p>
+<button (click)="show()">click Me</button>
+
+
+<h1>Data Binding example(2 way) using ngModel Directive</h1>
+
+<input [(ngModel)]="fullName" /> <br/><br/>    
+<p> {{fullName}} </p>  
+
+<h1>Angular Directiives</h1>
+<p  [ngStyle]="{'color': 'blue', 'font-size': '24px', 'font-weight': 'bold'}">Structural Directive : ngIf, ngFor, ngFor, ngSwitch</p>
+<p>using ngIf and ngFor to classify weekends and weekDays</p>
+<div *ngFor="let day of weekdays">
+    <p *ngIf="(day == 'Sunday' || day == 'Saturday'); else weekdayTemplate">{{day}} is a weekend Holiday</p>
+    <ng-template #weekdayTemplate>{{day}} is weekday</ng-template>
+</div>
+
+
+<h1>Service example: </h1>
+<p>data from myservic1 : {{message}}</p>
+<p>data from myservic2 : {{serviceMessage2}}</p>
+<h1>DEMO COMPONENT integrated</h1>
+<div class="app-demo"></div>
+<app-demo2></app-demo2>
+<div class="app-basic"></div>

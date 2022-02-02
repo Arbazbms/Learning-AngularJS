@@ -1,12 +1,13 @@
-import { Myservice2Service } from './myservice2.service';
-import { Myservice1Service } from './myservice1.service';
-import { Component } from '@angular/core';
+import { Myservice2Service } from './../myservice2.service';
+import { Component, OnInit } from '@angular/core';
+import { Myservice1Service } from '../myservice1.service';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-basic',
+  templateUrl: './basic.component.html',
+  styleUrls: ['./basic.component.css']
 })
-export class AppComponent {
+export class BasicComponent implements OnInit {
+
   title = 'my-first-project';
 
   myObject = {
@@ -35,4 +36,5 @@ export class AppComponent {
     this.message = this.Myservice1Service.getMsg()
     this.serviceMessage2 = this.Myservice2Service.myMsg2();
   }
+
 }

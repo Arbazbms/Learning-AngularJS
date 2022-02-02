@@ -1,0 +1,122 @@
+
+<!--FORMGROUP-->
+<div class="container">
+<h1>* Reactive-Form</h1>
+<h1>1. Using formGroup</h1>
+Value : {{loginForm.value | json}}
+
+<form [formGroup]="loginForm" (ngSubmit)="postData()">
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" formControlName="email">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" formControlName="password">
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Sign in</button>
+  </form>
+</div>
+
+
+
+
+
+
+<!--FORM BUILDER-->
+<h1>2. Using FormBuilder</h1>
+Value : {{loginForm2.value | json}}
+
+<div class="container">
+<form [formGroup]="loginForm2" (ngSubmit)="post2Data()">
+    <div class="row mb-3">
+      <label for="fname" class="col-sm-2 col-form-label">FirstName</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="fname" formControlName="fname">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="lname" class="col-sm-2 col-form-label">lname</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="lname" formControlName="lname">
+      </div>
+    </div>
+    
+    <button type="submit" class=" btn-primary">Sign in</button>
+  </form>
+
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<!--NESTED FORM BUILDER-->
+  <div class="container">
+      <p>data: </p>
+  {{data}}
+
+  <h1>3 .Nested FormBuilders</h1>
+    {{profileForm.value | json}}
+  <form [formGroup]="profileForm" (ngSubmit)="postNestedData()">
+
+    <div class="row mb-3">
+     <label for="first-name" class="col-sm-2 col-form-label" >First Name: </label>
+        <div class="col-sm-10">
+            <input id="first-name" type="text" class="form-control" formControlName="firstName">
+        </div>
+    </div>  
+
+    <div class="row mb-3">
+    <label for="last-name" class="col-sm-2 col-form-label">Last Name: </label>
+    <div class="col-sm-10">
+    <input id="last-name" type="text" class="form-control" formControlName="lastName">
+    </div>
+    </div> 
+
+    <div formGroupName="address">
+        <h2>Address</h2>
+    <div class="row mb-3">
+        <label for="street" class="col-sm-2 col-form-label">Street: </label>
+        <div class="col-sm-10">
+            <input id="street" type="text" class="form-control" formControlName="street">
+        </div>
+    </div>
+    <div class="row mb-3">
+
+        <label for="city" class="col-sm-2 col-form-label">City: </label>
+        <div class="col-sm-10">
+        <input id="city" type="text" class="form-control" formControlName="city">
+    </div>
+</div>
+    <div class="row mb-3">
+            <label for="state" class="col-sm-2 col-form-label">State: </label>
+            <div class="col-sm-10">
+            <input id="state" type="text" class="form-control" formControlName="state">
+        </div>
+    </div>
+    <div class="row mb-3">
+
+        <label for="zip" class="col-sm-2 col-form-label"> Zip Code: </label>
+        <div class="col-sm-10">
+
+        <input id="zip" type="text" class="form-control" formControlName="zip">
+      </div>
+        </div>
+    </div>
+
+    <button type="submit" class=" btn-primary">POST</button>
+  </form>
+
+</div>

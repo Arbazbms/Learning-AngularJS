@@ -1,0 +1,35 @@
+<p>formvalidation works!</p>
+{{formValid.value | json}}
+<br>
+<p>Form Dirty</p>{{formValid.dirty}}
+<br>
+<p>Form valid</p>{{formValid.valid}}
+<br>
+<p>Form Touched {{formValid.touched}}</p>
+<div class="container">
+<form [formGroup]="formValid" (ngSubmit)="submitData()">
+<div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your Name" formControlName="name">
+    <p class="text-danger" *ngIf="formValid.get('name')?.invalid && formValid.get('name')?.touched">Name is required</p>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Email" formControlName="email">
+    <p class="text-danger" *ngIf="formValid.get('email')?.invalid && formValid.get('email')?.touched">Email is required</p>  
+</div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Phone No." formControlName="phone">
+    <p class="text-danger" *ngIf="formValid.get('phone')?.invalid && formValid.get('phone')?.touched">Enter 10 digits</p>    
+</div>
+
+  <div class="mb-3">
+    <label for="message" class="form-label">message</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Message" formControlName="message"></textarea>
+    <p class="text-danger" *ngIf="formValid.get('message')?.invalid && formValid.get('message')?.touched">Minimim 10 chars required</p>  
+</div>
+    <button class="btn btn-primary" type="submit" [disabled]="formValid.invalid">SUBMIT</button>
+</form>
+</div>
