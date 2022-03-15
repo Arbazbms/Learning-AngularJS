@@ -26,6 +26,7 @@
         1. Value Changed - > pristine, Dirty
         2. Validity -> Valid, inValid -> return error collection
         3. Visited -> touched, untouched
+10. Http Calls
 
 ```
 

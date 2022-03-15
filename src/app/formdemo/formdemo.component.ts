@@ -8,9 +8,10 @@ import { FormControl } from '@angular/forms';
 export class FormdemoComponent implements OnInit {
 
   constructor() { }
-
+  skills = ["java", "cpp", "c#", "python", "Javascript"]
   ngOnInit(): void {
   }
   favoriteColorControl = new FormControl('');
   color: String = "";
+  dMenu =  new FormControl('')
 }

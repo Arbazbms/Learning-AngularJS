@@ -1,4 +1,5 @@
 <p>formdemo works!</p>
+<div class="container">
 <p> 1. Reactive Form Module: </p> 
 <input type="text" [formControl]="favoriteColorControl">
 {{favoriteColorControl.value}}
@@ -7,3 +8,10 @@
 <input type="text" [(ngModel)]="color">
 {{color}}
 
+<p>Dynamic DropDown Menu</p>
+<select class="form-select" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option *ngFor="let skill of skills" [value]="skill" >{{skill}}</option>
+  </select>
+
+</div>

@@ -1,3 +1,4 @@
+import { ApiComponent } from './api/api.component';
 import { FormvalidationComponent } from './formvalidation/formvalidation.component';
 import { FormdemoComponent } from './formdemo/formdemo.component';
 import { BasicComponent } from './basic/basic.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'form', component:FormdemoComponent},
   {path:'reactive', component: ReactiveFormBasicsComponent},
   {path : 'formvalidation', component:FormvalidationComponent},
+  {path : 'api', component:ApiComponent},
   {path:'**', component:PageNotFoundComponent}
 
 ];

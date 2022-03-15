@@ -14,8 +14,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BasicComponent } from './basic/basic.component';
 import { FormdemoComponent } from './formdemo/formdemo.component';
 import { ReactiveFormBasicsComponent } from './reactive-form-basics/reactive-form-basics.component';
-import { FormvalidationComponent } from './formvalidation/formvalidation.component'
-
+import { FormvalidationComponent } from './formvalidation/formvalidation.component';
+import { ApiComponent } from './api/api.component'
+import { ApiserviceService } from './apiservice.service';
+import { HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,16 +27,18 @@ import { FormvalidationComponent } from './formvalidation/formvalidation.compone
     BasicComponent,
     FormdemoComponent,
     ReactiveFormBasicsComponent,
-    FormvalidationComponent
+    FormvalidationComponent,
+    ApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [Myservice1Service,Myservice2Service, PostdataService],
+  providers: [Myservice1Service,Myservice2Service, PostdataService, ApiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
